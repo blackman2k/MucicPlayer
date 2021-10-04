@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player</title>
+    <link rel="stylesheet" href="./asset/style/style.css">
+    <link rel="stylesheet" href="./asset/font/fontawesome-free-5.15.4-web/css/all.css">
+    <link type="image/x-icon" href="./asset/img/icon.ico" rel="shortcut icon"/>
+  </head>
+  <body>
+      <div class="player">
+          <div class="dashboard">
+              <header>
+                  <h4>Now playing:</h4>
+                  <h2 class="name-song-play">Name song</h2>
+              </header>
+              <div class="cd">
+                  <div class="cd-thumb cicrle-background"></div>
+              </div>
+              <div class="control">
+                <i class="redo fas fa-redo-alt"></i>
+                <i class="back fas fa-chevron-left"></i>
+                <i class="fas fa-play-circle"></i>
+                <i class="fas fa-pause-circle"></i>
+                <i class="next fas fa-chevron-right"></i>
+                <i class="random fas fa-random"></i>
+              </div>
+              <input type="range" min="0" max="100" value="0" step="1" id="range">
+              <audio src="" id="audio"></audio>
+          </div>
+          <div class="playlist">
+              <div class="song">
+                  <div class="song-ava">
+                      <div class="img cicrle-background" style="background: url(./asset/img/Tro\ Choi.jpg) center/ cover no-repeat;"></div>
+                  </div>
+                  <div class="song-info">
+                      <p class="song-name">Trò chơi</p>
+                      <p class="song-singer">Soobin</p>
+                  </div>
+                  <i class="fas fa-ellipsis-h"></i>
+              </div>
+          </div>
+      </div>
+  </body>
+  <script src="./asset/js/main.js"></script>
+</html>

@@ -1,0 +1,250 @@
+/* CHUNG */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  font-family: "Roboto", sans-serif;
+}
+
+:root {
+  --color-primary: #ec1f55;
+  --sub-color: #f0f0f0;
+  --height-dashboard: 410px;
+}
+
+@keyframes Rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  height: 100vh;
+}
+
+.player {
+  height: 100%;
+  overflow-y: scroll;
+  transition: all 0.5s linear;
+}
+
+.player::-webkit-scrollbar {
+  width: 0;
+}
+
+.dashboard {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 100;
+}
+
+.dashboard header h4 {
+  margin-top: 20px;
+  color: var(--color-primary);
+  font-size: 16px;
+  text-align: center;
+}
+
+.dashboard header h4 {
+  margin-top: 20px;
+  color: var(--color-primary);
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.dashboard header .name-song-play {
+  text-align: center;
+  color: #000;
+  font-size: 2.4rem;
+  font-weight: 500;
+  margin-top: 3px;
+}
+
+.dashboard .cd {
+  width: 200px;
+  margin-top: 20px;
+}
+
+.dashboard .cd .cd-thumb {
+  width: 100%;
+  padding-top: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  animation: Rotate 7s infinite linear;
+  animation-play-state: paused;
+}
+
+.dashboard .cd .cd-thumb.offanimation {
+  animation: unset;
+}
+
+.player.playing .dashboard .cd .cd-thumb {
+  animation-play-state: running;
+}
+
+.dashboard .cd .cd-thumb::before {
+  content: "";
+  position: absolute;
+  width: 10%;
+  height: 10%;
+  background: #000;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cicrle-background {
+  border-radius: 50%;
+}
+
+.dashboard .control {
+  margin-top: 20px;
+  width: 100%;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.dashboard .control i {
+  font-size: 25px;
+  color: #6f6b9f;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.dashboard .control i::before {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboard .control i:active {
+  color: var(--color-primary);
+  background: var(--sub-color);
+}
+.dashboard .control i.active {
+  color: var(--color-primary);
+}
+
+.dashboard .control i[class*="play"],
+.dashboard .control i[class*="pause"] {
+  width: unset;
+  height: unset;
+  font-size: 65px;
+  display: block;
+  color: var(--color-primary);
+}
+
+.dashboard .control i[class*="pause"] {
+  display: none;
+}
+
+.player.playing .dashboard .control i[class*="pause"] {
+  display: block !important;
+}
+
+.player.playing .dashboard .control i[class*="play"] {
+  display: none !important;
+}
+
+.dashboard #range {
+  -webkit-appearance: none;
+  width: calc(100% - 20px);
+  height: 5px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  background: #d0cdf5;
+}
+
+.dashboard #range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 10px;
+  height: 10px;
+  background: var(--color-primary);
+  border-radius: 50%;
+}
+
+.playlist {
+  background: var(--sub-color);
+  margin-top: 406px;
+  padding: 0 10px;
+  padding-top: 10px;
+}
+
+.playlist .song {
+  display: flex;
+  background: #fff;
+  border-radius: 5px;
+  align-items: center;
+  padding: 15px 20px;
+  margin-top: 10px;
+}
+
+.playlist::-webkit-scrollbar {
+  width: 0;
+}
+
+.playlist .song .song-info {
+  flex-grow: 1;
+  padding-left: 20px;
+}
+
+.playlist .song .song-info .song-name {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.playlist .song .song-info .song-singer {
+  font-size: 1.4rem;
+  color: #666;
+}
+
+.playlist .song .song-ava {
+  width: 40px;
+}
+
+.playlist .song .song-ava .img {
+  padding-top: 100%;
+  width: 100%;
+}
+
+.playlist .song i {
+  font-size: 20px;
+  color: #999;
+}
+
+.playlist .song.playing {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.playlist .song.playing .song-info .song-singer {
+  color: #fff;
+}
+
+.playlist .song.playing i {
+  color: #fff;
+}
